@@ -9,15 +9,36 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private lazy var gameTitle:UILabel = {
+       let title = UILabel()
+        title.textAlignment = .center
+        title.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        return title
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func conf(game: String) {
+        gameTitle.text = game
+    }
+    
+    func setupUI() {
+        contentView.addSubview(gameTitle)
+        NSLayoutConstraint.activate([
+            gameTitle.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            gameTitle.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
+            gameTitle.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+            gameTitle.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 
 }

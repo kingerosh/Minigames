@@ -1,0 +1,6 @@
+framework module Pods_Minigames {
+  umbrella header "Pods-Minigames-umbrella.h"
+
+  export *
+  module * { export * }
+}

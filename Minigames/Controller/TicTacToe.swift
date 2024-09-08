@@ -16,7 +16,6 @@ class TicTacToe {
     var possibleIndecies = [0,1,2,3,4,5,6,7,8]
 
     func choiceXO(index: Int) -> Int {
-        print(index)
         if isGameComputer && counter != 0 {
             counter += 2
         } else {
