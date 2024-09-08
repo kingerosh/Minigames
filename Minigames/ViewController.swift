@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var gameData = ["Крестики-нолики", "Погода", "Кликерман", "Кроссворд", "Найди пару", "Погода", "Кликерман", "Кроссворд", "Крестики-нолики", "Погода"]
+    var gameData = ["❎ Крестики-нолики ⭕️", "⛅️ Погода", "Кликерман", "Кроссворд", "😎 Найди пару 😎", "⛅️ Погода", "Кликерман", "Кроссворд", "❎ Крестики-нолики ⭕️", "⛅️ Погода"]
     
     lazy var mainTableView: UITableView = {
         let table = UITableView()
@@ -58,10 +58,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let game = gameData[indexPath.row]
         var gameDetailViewController: UIViewController
         
-        if game == "Найди пару" {
+        if game == "😎 Найди пару 😎" {
             gameDetailViewController = EmojiViewController()
-        } else if game == "Погода"{
+        } else if game == "⛅️ Погода"{
             gameDetailViewController = WeatherViewController()
+        } else if game == "❎ Крестики-нолики ⭕️"{
+            gameDetailViewController = MainTicTacToeViewController()
+        } else if game == "Кликерман"{
+            gameDetailViewController = clickermanViewController()
         } else {
             gameDetailViewController = MainTicTacToeViewController()
         }

@@ -38,7 +38,7 @@ class ticTacToeViewController: UIViewController {
     let restartButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray5
-        button.setTitle("  Restart  ", for: .normal)
+        button.setTitle("  Заново  ", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
@@ -115,13 +115,13 @@ class ticTacToeViewController: UIViewController {
         view.backgroundColor = .white
         stackSetup()
         orderLabel.textColor = .blue
-        orderLabel.text = "Order of ❎"
+        orderLabel.text = "Очередь ❎"
     }
     
     @objc func restartButtonTapped(_ sender: UIButton) {
         game.restart()
         updateView()
-        orderLabel.text = "Order of ❎"
+        orderLabel.text = "Очередь ❎"
         winLabel.textColor = .green
         winLabel.text = ""
         for i in 0...8 {
@@ -136,9 +136,9 @@ class ticTacToeViewController: UIViewController {
         counter = game.choiceXO(index: index)
         if !game.isGameComputer {
             if counter % 2 != 0 {
-                orderLabel.text = "Order of ⭕️"
+                orderLabel.text = "Очередь ⭕️"
             } else {
-                orderLabel.text = "Order of ❎"
+                orderLabel.text = "Очередь ❎"
             }
         }
         arrayButton[index].isEnabled = false
@@ -165,14 +165,14 @@ class ticTacToeViewController: UIViewController {
         }
         if let win = game.win() {
             orderLabel.text = ""
-            if win == "Draw" {
+            if win == "Ничья" {
                 winLabel.textColor = .blue
                 winLabel.text = "\(win)"
             } else {
                 if win == "⭕️" {
                     winLabel.textColor = .red
                 }
-                winLabel.text = "Winner: \(win)"
+                winLabel.text = "Победил: \(win)"
             }
             for i in 0...8 {
                 arrayButton[i].isEnabled = false

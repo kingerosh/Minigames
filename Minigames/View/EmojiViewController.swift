@@ -31,7 +31,7 @@ class EmojiViewController: UIViewController {
     let restartButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray5
-        button.setTitle("  Restart  ", for: .normal)
+        button.setTitle("  Заново  ", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
@@ -112,7 +112,7 @@ class EmojiViewController: UIViewController {
                     found += 2
                     counter = 0
                     if found == 4 {
-                        label.text = "WIN"
+                        label.text = "Победа!"
                     }
                 }
             }
