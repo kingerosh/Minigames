@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var gameData = ["❎ Крестики-нолики ⭕️", "⛅️ Погода", "Кликерман", "Кроссворд", "😎 Найди пару 😎", "⛅️ Погода", "Кликерман", "Кроссворд", "❎ Крестики-нолики ⭕️", "⛅️ Погода"]
+    var gameData = ["❎ Крестики-нолики ⭕️", "⛅️ Погода", "Кликерман", "❎ Крестики-нолики ⭕️", "😎 Найди пару 😎", "⛅️ Погода", "Кликерман", "😎 Найди пару 😎", "❎ Крестики-нолики ⭕️", "⛅️ Погода"]
     
     lazy var mainTableView: UITableView = {
         let table = UITableView()
-        table.separatorStyle = .none
         table.dataSource = self
         table.delegate = self
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
 
     func setupUI() {

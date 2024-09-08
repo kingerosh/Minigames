@@ -27,6 +27,7 @@
 		67D046142C8E15C400E33A7A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D046132C8E15C400E33A7A /* WeatherViewController.swift */; };
 		67D0461A2C8E1BD200E33A7A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D046192C8E1BD200E33A7A /* Weather.swift */; };
 		67D0461C2C8E322100E33A7A /* clickermanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D0461B2C8E322100E33A7A /* clickermanViewController.swift */; };
+		67D046262C8E3EC800E33A7A /* Minigames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67D046242C8E3EC800E33A7A /* Minigames.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		67D046132C8E15C400E33A7A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		67D046192C8E1BD200E33A7A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		67D0461B2C8E322100E33A7A /* clickermanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clickermanViewController.swift; sourceTree = "<group>"; };
+		67D046252C8E3EC800E33A7A /* Minigames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Minigames.xcdatamodel; sourceTree = "<group>"; };
 		8138903272E1DF0FE9B922B1 /* Pods-Minigames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Minigames.release.xcconfig"; path = "Target Support Files/Pods-Minigames/Pods-Minigames.release.xcconfig"; sourceTree = "<group>"; };
 		DD7448551FFB6A164A2B401B /* Pods_Minigames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Minigames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 		6751AE0E2C8B066600B1D6E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				67D046202C8E3E6200E33A7A /* Data */,
 				6751AE0F2C8B067400B1D6E3 /* Subclass */,
 				6751AE122C8B095A00B1D6E3 /* ticTacToeViewController.swift */,
 				6774699D2C8DD472002D5112 /* MainTicTacToeViewController.swift */,
@@ -211,6 +214,14 @@
 				6751AE102C8B069D00B1D6E3 /* MainTableViewCell.swift */,
 			);
 			path = Subclass;
+			sourceTree = "<group>";
+		};
+		67D046202C8E3E6200E33A7A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				67D046242C8E3EC800E33A7A /* Minigames.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		F3AE79C1E5971A1A453CA324 /* Frameworks */ = {
@@ -402,6 +413,7 @@
 				6751ADE02C8B017B00B1D6E3 /* ViewController.swift in Sources */,
 				67D0461A2C8E1BD200E33A7A /* Weather.swift in Sources */,
 				6751AE192C8B109A00B1D6E3 /* XO.swift in Sources */,
+				67D046262C8E3EC800E33A7A /* Minigames.xcdatamodeld in Sources */,
 				677469A22C8E0B7F002D5112 /* NetworkManager.swift in Sources */,
 				6751ADDC2C8B017B00B1D6E3 /* AppDelegate.swift in Sources */,
 				6751AE112C8B069D00B1D6E3 /* MainTableViewCell.swift in Sources */,
@@ -749,6 +761,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		67D046242C8E3EC800E33A7A /* Minigames.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				67D046252C8E3EC800E33A7A /* Minigames.xcdatamodel */,
+			);
+			currentVersion = 67D046252C8E3EC800E33A7A /* Minigames.xcdatamodel */;
+			name = Minigames.xcdatamodeld;
+			path = /Users/erosh/Desktop/xcode/Minigames/Minigames/View/Data/Minigames.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6751ADD02C8B017B00B1D6E3 /* Project object */;
 }

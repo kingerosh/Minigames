@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class clickermanViewController: UIViewController {
     var counter = 0
+    var record: Int = 0
     
     let mainButton: UIButton = {
         let button = UIButton(type: .system)
@@ -88,6 +90,7 @@ class clickermanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        loadRecord()
         setupUI()
         // Do any additional setup after loading the view.
     }
@@ -118,12 +121,57 @@ class clickermanViewController: UIViewController {
             } else {
                 timer.invalidate()
                 self.mainButton.isEnabled = false
+                if self.record < self.counter {
+                    self.record = self.counter
+                    self.recordLabel.text = "Рекорд: " + String(self.counter)
+                    self.saveRecord(record: self.counter)
+                }
                 // Stop the timer when it reaches 0
             }
         }
         
     }
     
+    func saveRecord(record: Int) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistantContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: "Clickerman", in: context) else {return}
+        let info = NSManagedObject(entity: entity, insertInto: context)
+        info.setValue(Int32(record), forKey: "record")
+
+        do {
+            try context.save()
+        }
+        catch {
+            print("error save to CoreData")
+        }
+    }
+    
+    func loadRecord() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            print("AppDelegate cast failed")
+            return
+        }
+        let context = appDelegate.persistantContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Clickerman")
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let result = results.first as? NSManagedObject {
+                if let loadedRecord = result.value(forKey: "record") as? Int {
+                    record = loadedRecord
+                    recordLabel.text = "Рекорд: " + String(record)
+                } else {
+                    print("Record value is not of type Int")
+                }
+            } else {
+                print("No records found")
+            }
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+    }
+
     
     /*
     // MARK: - Navigation
