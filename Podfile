@@ -13,5 +13,5 @@ target 'Minigames' do
       config.build_settings['VALID_ARCHS'] = 'arm64, arm64e, x86_64'
     end
   end
-
+	
 end
